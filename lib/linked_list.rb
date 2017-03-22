@@ -12,23 +12,41 @@ attr_reader :head
         if @head == nil
             @head = Node.new(x) 
         else
-            @head.next_node = Node.new(x)
+            @head.next= Node.new(x)
         end
     end
 
+    def prepend(x)
+       #find value of head
+       original = head
+       #make a new node
+       @head = Node.new(x)
+       #reassing head to new node
+       #have new node point to existing nodes
+       @head.next = original
+    end
+
     def count
-        current_node = @head
-        count = 0
-       
-        if current_node.next_node == nil
-            count += 1
-        else
-            count += 1
-            current_node = current_node.next_node
-        end
+        current = @head
+        count = 1
+            while current.next != nil
+                count += 1
+            current = current.next
+            end
         count
     end
+
     def to_string
-        @head.data
+        items = ""
+        items << @head.data
+        current = @head.next
+        while current != nil
+            items << " " + current.data
+            current = current.next
+        end
+        items
     end
 end
+
+# binding.pry
+# ""
