@@ -18,10 +18,10 @@ class JungleBeat
     end
 
     def play
-        `say -r #{list.to_string}`
+        `say #{list.to_string}`
     end
 end
 
 jb = JungleBeat.new
-binding.pry
-""
+# binding.pry
+# ""
