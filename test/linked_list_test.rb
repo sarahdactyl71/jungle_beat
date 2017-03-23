@@ -57,5 +57,10 @@ class LinkedListTest < Minitest::Test
     end
     def test_does_insert_work
         list = LinkedList.new
-        
+        list.append("plop")
+        list.append("suu")
+        list.prepend("dop")
+        list.insert(1, "woo")
+        assert_equal "dop woo plop suu" , list.to_string
+    end
 end

@@ -26,6 +26,17 @@ attr_reader :head
        @head.next = original
     end
 
+    def insert(place, x)
+        #find a place in the list , current at head
+        current = head
+        #add a new node to the list 
+        place.times do
+            current = current.next
+        end
+        new_node = Node.new(x)
+        #have that new node point to subsequent nodes
+    end
+
     def count
         current = @head
         count = 1
